@@ -8,9 +8,6 @@
 
 import Foundation
 import RealityKit
-#if canImport(RealityFoundation)
-import RealityFoundation
-#endif
 
 #if os(macOS) || targetEnvironment(simulator)
 #warning("FocusEntity: This package is only fully available with physical iOS devices")

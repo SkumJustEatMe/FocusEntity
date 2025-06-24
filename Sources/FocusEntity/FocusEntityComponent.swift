@@ -43,6 +43,7 @@ public struct FocusEntityComponent: Component {
             nonTrackingColor: MaterialColorParameter,
             mesh: MeshResource = MeshResource.generatePlane(width: 0.1, depth: 0.1)
         )
+        case custom(modelEntity: ModelEntity)  // CUSTOM: Added custom style with ModelEntity
     }
 
     let style: Style
@@ -62,6 +63,16 @@ public struct FocusEntityComponent: Component {
                 onColor: onColor, offColor: offColor,
                 nonTrackingColor: nonTrackingColor, mesh: mesh
             )
+        default:
+            return nil
+        }
+    }
+
+    // CUSTOM: Computed property to get custom model entity if style is .custom
+    var customModelEntity: ModelEntity? {
+        switch self.style {
+        case .custom(let modelEntity):
+            return modelEntity
         default:
             return nil
         }

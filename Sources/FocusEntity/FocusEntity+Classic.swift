@@ -14,7 +14,7 @@ internal extension FocusEntity {
     // MARK: - Configuration Properties
 
     /// Original size of the focus square in meters. Not currently customizable
-    static let size: Float = 0.17
+    static let size: Float = 0.09
 
     /// Thickness of the focus square lines in meters. Not currently customizable
     static let thickness: Float = 0.018
